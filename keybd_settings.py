@@ -22,7 +22,7 @@ from gi.repository import Gtk, Gio, GdkPixbuf
 
 class ProgramSettings() :
 	def __init__(self):		
-		self.conf_file_path = ('/home/denis/.config/keybd-indicator/keybd_indicator.conf')
+		self.conf_file_path = (os.path.expanduser('~') + '/.config/keybd-indicator/keybd_indicator.conf')
 		self.param_name = 'message_display'
 		
 		if conflibsaver.has_param(self.conf_file_path, self.param_name) in [None, False] : self.create_settings()
